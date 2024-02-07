@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using StudyChat.Core.Entities;
 using StudyChat.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,17 @@ builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
+    Options =>
+    {
+        Options.Password.RequiredUniqueChars = 0;
+        Options.Password.RequireLowercase = false;
+        Options.Password.RequireUppercase = false;
+        Options.Password.RequireNonAlphanumeric = false;
+        Options.Password.RequiredLength = 6;
+    }
+    ).AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 

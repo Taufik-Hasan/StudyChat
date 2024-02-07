@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\studychat.jpg",
+      "PackagePath": "staticwebassets\\images\\studychat.jpg"
+    },
+    {
       "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

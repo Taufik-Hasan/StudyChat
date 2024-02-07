@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FTsN80AtR9KE7lEtAvibHJuFLlJg5C9I2HpaOwv43kA=",
+  "Hash": "h8j5s/X1jWcO9iIMZYcrqO9uZgFhOU/Z8GRkPeYs/3Q=",
   "Source": "StudyChat.Web",
   "BasePath": "_content/StudyChat.Web",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\studychat.jpg",
+      "SourceId": "StudyChat.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\",
+      "BasePath": "_content/StudyChat.Web",
+      "RelativePath": "images/studychat.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\studychat.jpg"
     },
     {
       "Identity": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\js\\site.js",
