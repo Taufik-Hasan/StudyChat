@@ -1,0 +1,15 @@
+D:\project\Onnorokom\StudyChat\StudyChat.Core\bin\Debug\net8.0\StudyChat.Core.deps.json
+D:\project\Onnorokom\StudyChat\StudyChat.Core\bin\Debug\net8.0\StudyChat.Core.runtimeconfig.json
+D:\project\Onnorokom\StudyChat\StudyChat.Core\bin\Debug\net8.0\StudyChat.Core.dll
+D:\project\Onnorokom\StudyChat\StudyChat.Core\bin\Debug\net8.0\StudyChat.Core.pdb
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.csproj.AssemblyReference.cache
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.AssemblyInfoInputs.cache
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.AssemblyInfo.cs
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.csproj.CoreCompileInputs.cache
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.sourcelink.json
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.dll
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\refint\StudyChat.Core.dll
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.pdb
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\StudyChat.Core.genruntimeconfig.cache
+D:\project\Onnorokom\StudyChat\StudyChat.Core\obj\Debug\net8.0\ref\StudyChat.Core.dll
