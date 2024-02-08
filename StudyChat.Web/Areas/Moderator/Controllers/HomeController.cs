@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace StudyChat.Web.Areas.Moderator.Controllers
 {
+	[Authorize(Roles="Moderator")]
 	[Area("Moderator")]
 	public class HomeController : Controller
 	{
