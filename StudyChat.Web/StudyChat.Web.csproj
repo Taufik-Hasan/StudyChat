@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Moderator\Data\" />
     <Folder Include="Areas\Moderator\Models\" />
     <Folder Include="Areas\Student\Data\" />

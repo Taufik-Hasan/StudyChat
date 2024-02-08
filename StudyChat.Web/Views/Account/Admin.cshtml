@@ -1,0 +1,43 @@
+﻿@model AdminVM
+@{
+	Layout = "~/Views/Shared/_LayoutForRegister.cshtml";
+}
+
+@{
+	ViewData["Title"] = "Log in";
+}
+
+
+<div class=" row d-flex align-items-center justify-content-center">
+	<div class="col-md-3 card p-3">
+		<h2 class="text-align-content-center text-info text-center">Admin Login Portal</h2>
+		<form asp-action="Admin" asp-controller="Account" method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="mb-1">
+				<label asp-for="Email" class="control-label"></label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="mb-1">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<div class="mb-1 form-check">
+				<label class="form-check-label">
+					<input asp-for="RememberMe" class="form-check-input" />@Html.DisplayNameFor(a => a.RememberMe)
+				</label>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<button type="submit" value="Login" class="btn btn-primary btn-sm float-end">Log in</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

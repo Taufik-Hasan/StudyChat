@@ -51,5 +51,43 @@ app.UseEndpoints(endpoints =>
 	);
 });
 
+// Initialize default identity roles
+using (var scope = app.Services.CreateScope())
+{
+	var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+	var roles = new[] { "Admin", "Teacher", "Student", "Modeator" };
+
+	foreach (var role in roles)
+	{
+		if (!await roleManager.RoleExistsAsync(role))
+		{
+			await roleManager.CreateAsync(new IdentityRole(role));
+		}
+	}
+}
+// Initialize default admin user
+using (var scope = app.Services.CreateScope())
+{
+	var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+	string adminEmail = "admin@admin.com";
+	string adminPassword = "Admin123";
+
+	if (await userManager.FindByEmailAsync(adminEmail) == null)
+	{
+		ApplicationUser admin = new ApplicationUser();
+		admin.Email = adminEmail;
+		admin.UserName = adminEmail;
+		admin.Name = "Admin";
+
+		var result = await userManager.CreateAsync(admin, adminPassword);
+
+		await userManager.AddToRoleAsync(admin, "Admin");
+
+
+	}
+
+}
+
 
 app.Run();
