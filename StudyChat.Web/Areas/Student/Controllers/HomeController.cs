@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StudyChat.Core.Entities;
+using StudyChat.Services;
+using StudyChat.Services.Interface;
 
 namespace StudyChat.Web.Areas.Student.Controllers
 {
@@ -7,9 +10,24 @@ namespace StudyChat.Web.Areas.Student.Controllers
 	[Area("Student")]
 	public class HomeController : Controller
 	{
-		public IActionResult Index()
+		private readonly IQuestionService _questionService;
+		private readonly IUserService _userService;
+
+		public HomeController(IQuestionService questionService, IUserService userService)
 		{
-			return View();
+			_questionService = questionService;
+			_userService = userService;
+		}
+
+		public async Task<ViewResult> Index()
+		{
+			var questions = await _questionService.GetAllQuestions();
+			foreach (var question in questions)
+			{
+				question.UserId = _userService.GetUserName(question.UserId);
+
+			}
+			return View(questions);
 		}
 
 		public IActionResult Setting()
@@ -21,6 +39,20 @@ namespace StudyChat.Web.Areas.Student.Controllers
 		[HttpPost]
 		public IActionResult Index(string content)
 		{
+			if (ModelState.IsValid)
+			{
+				Question question = new()
+				{
+					Content = content,
+					UserId = _userService.GetUserId,
+					IsAnswered = false
+				};
+
+				_questionService.CreateQuestion(question);
+				TempData["AlertMessage"] = "Question has been added successfully";
+
+				return RedirectToAction("Index", "Home", new { area = "Student" });
+			}
 			return View();
 		}
 	}

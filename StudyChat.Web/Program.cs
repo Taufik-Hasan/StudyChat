@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudyChat.Core.Entities;
 using StudyChat.DataAccess;
+using StudyChat.DataAccess.Interface;
+using StudyChat.DataAccess.Repository;
 using StudyChat.Services;
+using StudyChat.Services.Interface;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,8 +30,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
 builder.Services.Configure<IdentityOptions>(options => options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);
 
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
-
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<IQuestionService, QuestionService>();
 
 
 var app = builder.Build();

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyChat.Services
+namespace StudyChat.DataAccess.Interface
 {
-	public interface IUserService
+	public interface IUserRepository
 	{
-		string? GetUserId { get; }
-		bool? IsAuthenticated { get; }
+		string? GetUserName(string UserID);
 	}
 }

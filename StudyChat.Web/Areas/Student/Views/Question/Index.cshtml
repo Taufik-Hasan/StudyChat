@@ -4,7 +4,7 @@
 @{
 	ViewData["Title"] = "Student-Questions";
 }
-
+@model IEnumerable<StudyChat.Core.Entities.Question>
 
 <div>
 	<div class="row d-flex align-items-center justify-content-center">
@@ -14,7 +14,42 @@
 			<div class="row">
 				<div class="col-md-12">
 					<br />
-					
+					@{
+						int count = Model.Count();
+						int i = count;
+						if (count != 0)
+						{
+							@foreach (var question in Model)
+							{
+								<div class="card p-3 mb-3">
+									<h5 class="text-info">Question: @i </h5>
+									<p>@question.Content</p>
+									<div>
+										@if (@question.IsAnswered)
+										{
+											<p>Answer:</p>
+											<a class="btn btn-primary btn-sm">Show Answer</a>
+										}
+										else
+										{
+											<p>Answer: Not Answered Yet</p>
+										}
+									</div>
+								</div>
+								i--;
+							}
+						}
+						else
+						{
+							<div class="col-md-12 card p-2">
+								<br />
+								<p class="text-align content-center text-danger text-center">
+									No question asked yet by you! If you have any question, please ask.
+								</p>
+							</div>
+						}
+
+					}
 				</div>
 			</div>
 		</div>
