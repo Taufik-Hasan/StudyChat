@@ -53,8 +53,8 @@ namespace StudyChat.Web.Controllers
 								return RedirectIfUserLogedIn();
 							}
                         }
+						Logout();
 						ModelState.AddModelError(string.Empty, "Invalid Account Type");
-                        Logout();
 						return View(model);
 					}
 
@@ -151,7 +151,16 @@ namespace StudyChat.Web.Controllers
                 var result = signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Result.Succeeded)
                 {
-                    return RedirectToAction("index", "Home", new { area = "Admin" });
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                             return RedirectIfUserLogedIn();
+                        }
+                        Logout();
+                        ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                        return View(model);
+                    }
                 }
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
                 return View(model);

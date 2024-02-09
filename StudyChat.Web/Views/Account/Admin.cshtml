@@ -9,7 +9,7 @@
 
 
 <div class=" row d-flex align-items-center justify-content-center">
-	<div class="col-md-3 card p-3">
+	<div class="col-md-4 card p-3">
 		<h2 class="text-align-content-center text-info text-center">Admin Login Portal</h2>
 		<form asp-action="Admin" asp-controller="Account" method="post">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -35,6 +35,18 @@
 			</div>
 		</form>
 	</div>
+	<div>
+		<br /> <br />
+		
+		<div class="col-md-12 card p-2">
+			<br/>
+			<p class="text-align content-center text-danger text-center">
+				*Only Admin can add Moderator!
+				If you are not admin, please contact with admin!
+			</p>
+		</div>
+	</div>
+
 </div>
 
 

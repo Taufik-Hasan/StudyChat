@@ -1,5 +1,55 @@
 ﻿@{
-	Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "~/Views/Shared/_LayoutForStudent.cshtml";
+}
+@{
+	ViewData["Title"] = "Student-Dashboard";
 }
 
-<h1>Student Area</h1>
+@model IEnumerable<StudyChat.Core.Entities.Question>
+
+<div>
+	<div class=" row d-flex align-items-center justify-content-center ">
+		@if (TempData["Message"] != null)
+		{
+			<div class="alert alert-success">
+				@TempData["Message"]
+				<button type="button" class="close" data-dismiss="alart"></button>
+			</div>
+		}
+		<div class="col-md-9 card p-9 border-0">
+			<h2 class="text-align-content-center text-info text-center">Have any question?</h2>
+			<form asp-action="index" asp-controller="Home" asp-area="Student" method="post">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="mb-1">
+					<textarea name="content" rows="2" class="form-control" placeholder="Write your questions here ..."></textarea>
+					<span asp-validation-for="content" class="text-danger"></span>
+				</div>
+				<div class="row">
+					<div class="col-7">
+						<br />
+						<button type="submit" value="submit" class="btn btn-primary btn-sm float-end ">Ask Question?</button>
+						<br />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="row d-flex align-items-center justify-content-center">
+		<div class="col-md-8 card p-9 border-0">
+			<br />
+			<h2 class="text-align-content-center text-info text-center">Questions from All Students</h2>
+			<div class="row">
+				<div class="col-md-12">
+					<br />
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+} 

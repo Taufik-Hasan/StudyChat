@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\home.png",
+      "PackagePath": "staticwebassets\\images\\home.png"
+    },
+    {
+      "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\logout.png",
+      "PackagePath": "staticwebassets\\images\\logout.png"
+    },
+    {
+      "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\myquestions.png",
+      "PackagePath": "staticwebassets\\images\\myquestions.png"
+    },
+    {
+      "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\setting.png",
+      "PackagePath": "staticwebassets\\images\\setting.png"
+    },
+    {
       "Id": "D:\\project\\Onnorokom\\StudyChat\\StudyChat.Web\\wwwroot\\images\\studychat.jpg",
       "PackagePath": "staticwebassets\\images\\studychat.jpg"
     },

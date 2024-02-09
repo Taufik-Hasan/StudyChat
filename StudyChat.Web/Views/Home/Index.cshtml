@@ -36,6 +36,28 @@
         <div class="text-center">
             <h1>🚀📚</h1>
         </div>
+        <p>Get started by asking a question or browsing the questions from your peers.</p>
+        @if(User.Identity.IsAuthenticated)
+		{
+            <div class=" row d-flex align-items-center justify-content-center ">
+                <div class="col-md-3 card p-3 border-0">
+                    <a class="btn btn-primary btn-sm" asp-area="" asp-controller="Account" asp-action="index">Dashboard</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div>
+                <div class=" row d-flex align-items-center justify-content-center ">
+                    <div class="col-md-3 card p-3 border-0">
+                        <a class="btn btn-primary btn-sm" asp-area="" asp-controller="Account" asp-action="index">LogIn</a>
+                    </div>
+                    <div class="col-md-3 card p-3 border-0">
+                        <a class="btn btn-primary btn-sm" asp-area="" asp-controller="Account" asp-action="register">Register!</a>
+                    </div>
+                </div>
+            </div>
+        }
     </section>
 
 </body>

@@ -11,5 +11,17 @@ namespace StudyChat.Web.Areas.Student.Controllers
 		{
 			return View();
 		}
+
+		public IActionResult Setting()
+		{
+			return View();
+		}
+
+
+		[HttpPost]
+		public IActionResult Index(string content)
+		{
+			return View();
+		}
 	}
 }
