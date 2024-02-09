@@ -34,5 +34,11 @@ namespace StudyChat.Services
 			var questions = await _questionRepository.GetAllQuestionsByUserID(UserID);
 			return questions;
 		}
+
+		public Task<Question> GetQuestionById(int id)
+		{
+			var question = _questionRepository.GetQuestionById(id);
+			return question;
+		}
 	}
 }

@@ -69,7 +69,7 @@ app.UseEndpoints(endpoints =>
 using (var scope = app.Services.CreateScope())
 {
 	var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-	var roles = new[] { "Admin", "Teacher", "Student", "Modeator" };
+	var roles = new[] { "Admin", "Teacher", "Student", "Moderator" };
 
 	foreach (var role in roles)
 	{

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudyChat.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ee515ee4b2d1b55e398dc938890b44c8110ae10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c290e5ac628b86d6712ad40c40816364c90cab6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudyChat.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudyChat.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

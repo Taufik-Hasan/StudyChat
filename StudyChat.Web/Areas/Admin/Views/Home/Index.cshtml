@@ -1,5 +1,60 @@
-﻿@{
-	Layout = "~/Views/Shared/_Layout.cshtml";
+﻿
+@{
+	Layout = "~/Views/Shared/_LayoutForAdmin.cshtml";
 }
 
-<h1>Admin Area, Working In Progress</h1>
+@{
+	ViewData["Title"] = "Admin - DashBoard";
+}
+
+
+<div class=" row d-flex align-items-center justify-content-center block">
+	@if (TempData["Message"] != null)
+	{
+		<div class="col-md-10 alert alert-success notification alert-dismissible fade show" role="alert">
+			<strong>@TempData["Message"]</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	else if (TempData["ErrorMessage"] != null)
+	{
+		<div class="col-md-10  alert alert-danger notification alert-dismissible fade show" role="alert">
+			<strong>@TempData["ErrorMessage"]</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div class="col-md-4 card p-4">
+		<h4 class="text-align-content-center text-info">Moderator Registration Portal</h4>
+		<form asp-area="Admin" asp-controller="Home" asp-action="Index" method="post">
+		
+			<div class="mb-1">
+				<label asp-for="Name" class="control-label">Name</label>
+				<input name="name" asp-for="Name" class="form-control" required />
+			</div>
+
+
+			<div class="mb-1">
+				<label asp-for="Email" class="control-label">Email</label>
+				<input name="email" asp-for="Email" class="form-control" required/>
+			</div>
+
+			<div class="mb-1">
+				<label asp-for="Password" class="control-label">Password</label>
+				<input name="password" asp-for="Password" class="form-control" required/>
+			</div>
+
+			<div class="row">
+				<div class="col-4">
+					<button type="submit" value="Register" class="btn btn-primary btn-sm float-end">Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<br />
+	<br />
+</div>
+
+
+
+
+

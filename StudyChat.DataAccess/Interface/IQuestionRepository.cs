@@ -13,5 +13,6 @@ namespace StudyChat.DataAccess.Interface
 		public void DeleteQuestion(Question question);
 		public Task<IEnumerable<Question>?> GetAllQuestionsByUserID(string UserID);
 		public Task<IEnumerable<Question>> GetAllQuestions();
+		public Task<Question> GetQuestionById(int id);
 	}
 }

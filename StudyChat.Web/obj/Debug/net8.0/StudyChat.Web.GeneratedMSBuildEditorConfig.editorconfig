@@ -30,8 +30,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Admin/Views/Home/Moderator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxNb2RlcmF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Admin/Views/Home/Setting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxTZXR0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Moderator/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9kZXJhdG9yXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Moderator/Views/Home/Setting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9kZXJhdG9yXFZpZXdzXEhvbWVcU2V0dGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Student/Views/Home/Index.cshtml]
@@ -46,8 +58,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xRdWVzdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Answer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xBbnN3ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/QuestionAnswer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXFF1ZXN0aW9uQW5zd2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/Respond.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXFJlc3BvbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/Setting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXFNldHRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Account/Admin.cshtml]
@@ -74,8 +102,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Shared/_LayoutForAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Shared/_LayoutForModerator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JNb2RlcmF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Shared/_LayoutForStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Shared/_LayoutForTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JUZWFjaGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Shared/_LoginPartial.cshtml]

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace StudyChat.DataAccess.Repository
 {
@@ -74,5 +75,19 @@ namespace StudyChat.DataAccess.Repository
 			return questions;
 		}
 
+		public async Task<Question> GetQuestionById(int id)
+		{
+			Question questions = new Question();
+			var query = await _context.Questions.FirstOrDefaultAsync(s => s.Id == id);
+
+			if (query != null)
+			{
+				questions.Id = query.Id;
+				questions.Content = query.Content;
+				questions.UserId = query.UserId;
+				questions.IsAnswered = query.IsAnswered;
+			}
+			return questions;
+		}
 	}
 }

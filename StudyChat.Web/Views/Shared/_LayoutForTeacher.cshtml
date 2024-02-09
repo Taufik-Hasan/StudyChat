@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StudyChat.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StudyChat.Web.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        header {
+            background-color: white;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 230px;
+            position: fixed;
+            z-index: 1;
+            top: 7px;
+            left: 0;
+            background-color: #E1FFDD;
+            padding-top: 0px;
+            margin-top: 60px; /* Adjust margin to leave space for the header */
+        }
+
+            .sidenav a {
+                text-decoration: none;
+                font-weight: bold;
+                font-size: large;
+                font-size: 18px;
+                color: black;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidenav a:hover {
+                    color: #49EBB0;
+                }
+
+        #main_container {
+            margin-left: 250px;
+            margin-top: 80px;
+            position: absolute;
+            padding: 16px;
+            transition: margin-left 0.5s;
+        }
+
+        footer {
+            background-color: #E1DFF1;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-left: -40px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">StudyChat (Teacher)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" class="navbar-brand" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="sidenav">
+        <br />
+
+        <div class=" row d-flex align-items-center justify-content-center ">
+            <div class="col-md-3 card p-3 border-0">
+                <img src="~/images/home.png" class="nav-img" alt="questions">
+            </div>
+            <div class="col-md-8 card p-3 border-0">
+                <a class="btn btn-primary btn-sm" asp-area="Teacher" asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class=" row d-flex align-items-center justify-content-center ">
+            <div class="col-md-3 card p-3 border-0">
+                <img src="~/images/myquestions.png" class="nav-img" alt="questions">
+            </div>
+            <div class="col-md-8 card p-3 border-0">
+                <a class="btn btn-primary btn-sm" asp-area="Teacher" asp-controller="Home" asp-action="Respond">Responded Q&A</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class=" row d-flex align-items-center justify-content-center ">
+            <div class="col-md-3 card p-3 border-0">
+                <img src="~/images/setting.png" class="nav-img" alt="questions">
+            </div>
+            <div class="col-md-8 card p-3 border-0">
+                <a class="btn btn-primary btn-sm" asp-area="Teacher" asp-controller="Home" asp-action="QuestionAnswer">Setting</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class=" row d-flex align-items-center justify-content-center ">
+            <div class="col-md-3 card p-3 border-0">
+                <img src="~/images/logout.png" class="nav-img" alt="questions">
+            </div>
+            <div class="col-md-8 card p-3 border-0">
+                <a class="btn btn-primary btn-sm" asp-area="" asp-controller="Account" asp-action="logout">Logout</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="main_container" class="container ">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2024 - "StudyChat.
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

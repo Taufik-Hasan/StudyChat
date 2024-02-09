@@ -12,5 +12,6 @@ namespace StudyChat.Services.Interface
 		public void CreateQuestion(Question question);
 		public Task<IEnumerable<Question>?> GetAllQuestionsByUserID(string UserID);
 		public Task<IEnumerable<Question>> GetAllQuestions();
+		public Task<Question> GetQuestionById(int id);
 	}
 }
