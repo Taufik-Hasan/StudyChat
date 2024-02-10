@@ -23,6 +23,11 @@ namespace StudyChat.Services
 			_questionRepository.CreateQuestion(question);
 		}
 
+		public async Task DeleteQuestionByQuestionID(int QuestionId)
+		{
+			await _questionRepository.DeleteQuestionByQuestionIDAsync(QuestionId);
+		}
+
 		public async Task<IEnumerable<Question>> GetAllQuestions()
 		{
 			var questions = await _questionRepository.GetAllQuestions();

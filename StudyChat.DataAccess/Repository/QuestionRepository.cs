@@ -27,9 +27,16 @@ namespace StudyChat.DataAccess.Repository
 			_context.SaveChanges();
 		}
 
-		public void DeleteQuestion(Question question)
+		public async Task DeleteQuestionByQuestionIDAsync(int questionId)
 		{
-			throw new NotImplementedException();
+			var questionToRemove = _context.Questions.FirstOrDefault(s => s.Id == questionId);
+
+			if (questionToRemove != null)
+			{
+				_context.Questions.Remove(questionToRemove);
+				
+			}
+			await _context.SaveChangesAsync();
 		}
 
 		public async Task<IEnumerable<Question>> GetAllQuestions()

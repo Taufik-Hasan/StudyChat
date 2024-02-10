@@ -9,6 +9,20 @@
 <div>
 	<div class="row d-flex align-items-center justify-content-center">
 		<div class="col-md-8 card p-9 border-0">
+			@if (TempData["Message"] != null)
+			{
+				<div class="col-md-10 alert alert-success notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["Message"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
+			else if (TempData["ErrorMessage"] != null)
+			{
+				<div class="col-md-10  alert alert-danger notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["ErrorMessage"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
 			<br />
 			<h2 class="text-align-content-center text-info text-center">Previous Questions</h2>
 			<div class="row">
@@ -33,6 +47,7 @@
 										else
 										{
 											<p>Answer: Not Answered Yet</p>
+											<a href="/Student/Question/DeleteQuestion/@question.Id" class="btn btn-danger" onclick="return confirm('Are you sure, you want to delete this question!')">Delete</a>
 										}
 									</div>
 								</div>

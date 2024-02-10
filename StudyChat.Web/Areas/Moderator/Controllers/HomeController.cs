@@ -74,5 +74,13 @@ namespace StudyChat.Web.Areas.Moderator.Controllers
 		}
 
 
+		public async Task<IActionResult> DeleteQuestion(int id)
+		{
+			await _questionService.DeleteQuestionByQuestionID(id);
+			TempData["Message"] = "Question has been deleted successfully";
+			return RedirectToAction("Index", "Home", new { area = "Moderator" });
+		}
+
+
 	}
 }

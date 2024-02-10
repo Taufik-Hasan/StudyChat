@@ -39,11 +39,18 @@ namespace StudyChat.Web.Areas.Student.Controllers
 				};
 
 				_questionService.CreateQuestion(question);
-				TempData["AlertMessage"] = "Question has been added successfully";
+				TempData["Message"] = "Question has been added successfully";
 
 				return RedirectToAction("Index", "Question", new { area = "Student" });
 			}
 			return View();
+		}
+
+		public async Task<IActionResult> DeleteQuestion(int id)
+		{
+			await _questionService.DeleteQuestionByQuestionID(id);
+			TempData["Message"] = "Question has been deleted successfully";
+			return RedirectToAction("Index", "Question", new { area = "Student" });
 		}
 
 	}

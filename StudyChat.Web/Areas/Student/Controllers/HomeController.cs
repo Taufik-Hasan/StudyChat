@@ -51,7 +51,7 @@ namespace StudyChat.Web.Areas.Student.Controllers
 				};
 
 				_questionService.CreateQuestion(question);
-				TempData["Message"] = "Moderator Added Successfully";
+				TempData["Message"] = "Question Created Successfully";
 
 				return RedirectToAction("Index", "Home", new { area = "Student" });
 			}
