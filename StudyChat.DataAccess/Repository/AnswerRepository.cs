@@ -39,20 +39,26 @@ namespace StudyChat.DataAccess.Repository
 			throw new NotImplementedException();
 		}
 
-		public Task<Answer> GetAnswerByQuestionId(int QuestionId)
+		public async Task<List<Answer>> GetAnswerByQuestionId(int QuestionId)
 		{
+			List<Answer> answersList = new List<Answer>();
 			Answer answers = new Answer();
-			var query = _context.Answers.FirstOrDefaultAsync(a => a.QuestionId == QuestionId);
 			
+			//var query = _context.Answers.FirstOrDefaultAsync(a => a.QuestionId == QuestionId);
 
-			if (query != null)
+			var query = await _context.Answers.Where(a => a.QuestionId == QuestionId).ToListAsync();
+
+			foreach (var item in query)
 			{
-				answers.Id = query.Result.Id;
-				answers.Content = query.Result.Content;
-				answers.UserId = query.Result.UserId;
-				answers.QuestionId = query.Result.QuestionId;
+				answers.Id = item.Id;
+				answers.Content = item.Content;
+				answers.UserId = item.UserId;
+				answers.QuestionId = item.QuestionId;
+
+				answersList.Add(answers);
 			}
-			return Task.FromResult(answers);
+
+			return answersList;
 		}
 
 		public void UpdateAnswer(Answer answer)

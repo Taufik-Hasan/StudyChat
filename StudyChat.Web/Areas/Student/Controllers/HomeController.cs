@@ -63,7 +63,7 @@ namespace StudyChat.Web.Areas.Student.Controllers
 		public async Task<IActionResult> ShowAnswer(int id)
 		{
 			Question question = new Question();
-			Answer answer = new Answer();
+
 
 			List<(string, string, string)> questionAnswer = new List<(string, string, string)>();
 
@@ -75,18 +75,22 @@ namespace StudyChat.Web.Areas.Student.Controllers
 				}
 				else
 				{
+					List<Answer> answers = new List<Answer>();
+
 					question = await _questionService.GetQuestionById(id);
-					answer = await _answerService.GetAnswerByQuestionId(id);
+					answers = await _answerService.GetAnswerByQuestionId(id);
+
 					if (question == null)
 					{
 						TempData["ErrorMessage"] = "Something went wrong";
 						return NotFound();
 					}
 
-					answer.UserId = _userService.GetUserName(answer.UserId);
-
-					questionAnswer.Add((question.Content, answer.Content, answer.UserId));
-
+					foreach (var answer in answers)
+					{
+						answer.UserId = _userService.GetUserName(answer.UserId);
+						questionAnswer.Add((question.Content, answer.Content, answer.UserId));
+					}
 				}
 			}
 			catch (Exception e)

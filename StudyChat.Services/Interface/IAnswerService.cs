@@ -10,6 +10,6 @@ namespace StudyChat.Services.Interface
 	public interface IAnswerService
 	{
 		public void CreateAnswer(Answer answer);
-		public Task<Answer> GetAnswerByQuestionId(int id);
+		public Task<List<Answer>> GetAnswerByQuestionId(int QuestionId);
 	}
 }

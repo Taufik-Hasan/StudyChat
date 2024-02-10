@@ -22,9 +22,9 @@ namespace StudyChat.Services
 			_answerRepository.CreateAnswer(answer);
 		}
 
-		public Task<Answer> GetAnswerByQuestionId(int id)
+		public async Task<List<Answer>> GetAnswerByQuestionId(int QuestionId)
 		{
-			 var answer = _answerRepository.GetAnswerByQuestionId(id);
+			 var answer = await _answerRepository.GetAnswerByQuestionId(QuestionId);
 			return answer;
 		}
 	}
