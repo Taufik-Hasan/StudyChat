@@ -29,8 +29,17 @@
 									<p>@question.Content</p>
 									<p>Asked by: @question.UserId</p>
 									<div>
-										<a asp-area="Moderator" asp-controller="Home" asp-action="Setting" class="btn btn-info">Details</a>
-										<a asp-area="Moderator" asp-controller="Home" asp-action="DeleteQuestion" asp-route-id="@question.Id" class="btn btn-danger" onclick="return confirm('Are you sure, you want to delete this question!')">Delete</a>
+										@if (@question.IsAnswered)
+										{
+											<p>Answered</p>
+											<a href="/Moderator/Home/ShowAnswer/@question.Id" class="btn btn-info btn-primary">Show Answer</a>
+											<a href="/Moderator/Home/ShowAnswer/@question.Id" class="btn btn-danger" onclick="return confirm('Are you sure, you want to delete this question!')">Delete</a>
+										}
+										else
+										{
+											<p>Answer: Not Answered Yet</p>
+											<a href="/Moderator/Home/ShowAnswer/@question.Id" class="btn btn-danger" onclick="return confirm('Are you sure, you want to delete this question!')">Delete</a>
+										}
 									</div>
 								</div>
 								i--;
