@@ -21,5 +21,11 @@ namespace StudyChat.Services
 		{
 			_answerRepository.CreateAnswer(answer);
 		}
+
+		public Task<Answer> GetAnswerByQuestionId(int id)
+		{
+			 var answer = _answerRepository.GetAnswerByQuestionId(id);
+			return answer;
+		}
 	}
 }

@@ -30,7 +30,7 @@
 										@if (@question.IsAnswered)
 										{
 											<p>Answered</p>
-											<a class="btn btn-info btn-primary">Show Answer</a>
+											<a href="/Teacher/Home/ShowAnswer/@question.Id" class="btn btn-info btn-primary">Show Answer</a>
 											<a href="/Teacher/Home/QuestionAnswer/@question.Id" class="btn btn-primary">Reply</a>
 										}
 										else

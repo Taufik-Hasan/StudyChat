@@ -39,9 +39,20 @@ namespace StudyChat.DataAccess.Repository
 			throw new NotImplementedException();
 		}
 
-		public Task<IEnumerable<Answer>> GetAnswersByQuestionId(int questionId)
+		public Task<Answer> GetAnswerByQuestionId(int QuestionId)
 		{
-			throw new NotImplementedException();
+			Answer answers = new Answer();
+			var query = _context.Answers.FirstOrDefaultAsync(a => a.QuestionId == QuestionId);
+			
+
+			if (query != null)
+			{
+				answers.Id = query.Result.Id;
+				answers.Content = query.Result.Content;
+				answers.UserId = query.Result.UserId;
+				answers.QuestionId = query.Result.QuestionId;
+			}
+			return Task.FromResult(answers);
 		}
 
 		public void UpdateAnswer(Answer answer)

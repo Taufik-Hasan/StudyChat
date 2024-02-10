@@ -58,10 +58,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xRdWVzdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Answer/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xBbnN3ZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/Setting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXFNldHRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/project/Onnorokom/StudyChat/StudyChat.Web/Areas/Teacher/Views/Home/ShowAnswer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXFNob3dBbnN3ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/project/Onnorokom/StudyChat/StudyChat.Web/Views/Account/Admin.cshtml]

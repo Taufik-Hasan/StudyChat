@@ -13,6 +13,6 @@ namespace StudyChat.DataAccess.Interface
 		public void UpdateAnswer(Answer answer);
 		public void DeleteAnswer(int id);
 		public Task<Answer> GetAnswerById(int id);
-		public Task<IEnumerable<Answer>> GetAnswersByQuestionId(int questionId);
+		public Task<Answer> GetAnswerByQuestionId(int id);
 	}
 }
