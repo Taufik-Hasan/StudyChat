@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudyChat.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace StudyChat.Services
 		string? GetUserId { get; }
 		bool? IsAuthenticated { get; }
 		string? GetUserName(string UserID);
+		public Task<List<(string, string, string)>> GetRespondedQA(string UserID);
 	}
 }

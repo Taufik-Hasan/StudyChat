@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudyChat.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c290e5ac628b86d6712ad40c40816364c90cab6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b176e834ecd9163df5786de8796ece8608d65713")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudyChat.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudyChat.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

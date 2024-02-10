@@ -9,4 +9,45 @@
 	Layout = "~/Views/Shared/_LayoutForTeacher.cshtml";
 }
 
-<h2>hello</h2>
+<div>
+	<div class=" row d-flex align-items-center justify-content-center ">
+		<div class="col-md-9 card p-9 border-0">
+			@if (TempData["Message"] != null)
+			{
+				<div class="col-md-10 alert alert-success notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["Message"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
+			else if (TempData["ErrorMessage"] != null)
+			{
+				<div class="col-md-10  alert alert-danger notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["ErrorMessage"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
+			<h2 class="text-align-content-center text-info text-center">Selected Question for Answer</h2>
+			<form asp-action="QuestionAnswer" asp-controller="Home" asp-area="Teacher" method="post">
+				<div class="mb-1">
+					<h5 class="text-info">Question:</h5>
+					<p>@Model.Content</p>
+					<p>Asked by: @Model.UserId</p>
+				</div>
+				<div class="mb-1">
+					<textarea name="content" rows="2" class="form-control" placeholder="Write your answer here ..." required></textarea>
+					<span asp-validation-for="content" class="text-danger"></span>
+					<input type="hidden" name="questionId" value="@Model.Id" />
+				</div>
+				<div class="row">
+					<div class="col-7">
+						<br />
+						<button type="submit" value="submit" class="btn btn-primary btn-sm float-end ">Submit Answer</button>
+						<br />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	
+</div>

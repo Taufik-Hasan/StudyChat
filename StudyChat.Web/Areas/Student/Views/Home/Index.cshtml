@@ -9,19 +9,26 @@
 
 <div>
 	<div class=" row d-flex align-items-center justify-content-center ">
-		@if (TempData["Message"] != null)
-		{
-			<div class="alert alert-success">
-				@TempData["Message"]
-				<button type="button" class="close" data-dismiss="alart"></button>
-			</div>
-		}
 		<div class="col-md-9 card p-9 border-0">
+			@if (TempData["Message"] != null)
+			{
+				<div class="col-md-10 alert alert-success notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["Message"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
+			else if (TempData["ErrorMessage"] != null)
+			{
+				<div class="col-md-10  alert alert-danger notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["ErrorMessage"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
 			<h2 class="text-align-content-center text-info text-center">Have any question?</h2>
 			<form asp-action="index" asp-controller="Home" asp-area="Student" method="post">
 				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 				<div class="mb-1">
-					<textarea name="content" rows="2" class="form-control" placeholder="Write your questions here ..."></textarea>
+					<textarea name="content" rows="2" class="form-control" placeholder="Write your questions here ..." required></textarea>
 					<span asp-validation-for="content" class="text-danger"></span>
 				</div>
 				<div class="row">
@@ -56,8 +63,8 @@
 									<div>
 										@if (@question.IsAnswered)
 										{
-											<p>Answer:</p>
-											<a class="btn btn-primary btn-sm">Show Answer</a>
+											<p>Answered</p>
+											<a class="btn btn-info btn-primary">Show Answer</a>
 										}
 										else
 										{

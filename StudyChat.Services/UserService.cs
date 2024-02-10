@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using StudyChat.Core.Entities;
 using StudyChat.DataAccess.Interface;
 using StudyChat.Services.Interface;
 
@@ -37,6 +38,12 @@ namespace StudyChat.Services
 
 		public bool? IsAuthenticated => GetUserId != null;
 
+		public async Task<List<(string, string, string)>> GetRespondedQA(string UserID)
+		{
+			var respondedQA = await _userRepository.GetRespondedQA(UserID);
+
+			return respondedQA;
+		}
 
 		public string? GetUserName(string UserID)
 		{

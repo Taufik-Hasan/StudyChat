@@ -5,12 +5,66 @@
 	ViewData["Title"] = "Respond from Teacher";
 }
 
-
+@model List<(string, string, string)>
+ 
 <div>
 	<div class=" row d-flex align-items-center justify-content-center ">
-
 		<div class="col-md-9 card p-9 border-0">
-			<h2 class="text-align-content-center text-info text-center">Continue working, please keep with us!</h2>
+			@if (TempData["Message"] != null)
+			{
+				<div class="col-md-10 alert alert-success notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["Message"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
+			else if (TempData["ErrorMessage"] != null)
+			{
+				<div class="col-md-10  alert alert-danger notification alert-dismissible fade show" role="alert">
+					<strong>@TempData["ErrorMessage"]</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			}
+		</div>
+	</div>
+
+
+
+	<div class="row d-flex align-items-center justify-content-center">
+		<div class="col-md-8 card p-9 border-0">
+			<br />
+			<h2 class="text-align-content-center text-info text-center">Your Responses</h2>
+			<div class="row">
+				<div class="col-md-12">
+					<br />
+					@{
+						int count = Model.Count();
+						int i = 1;
+						if (count != 0)
+						{
+							@foreach (var respond in Model)
+							{
+								<div class="card p-3 mb-3">
+									<h5 class="text-info">Response: @i </h5>
+									<p>Question: @respond.Item2</p>
+									<p>Asked by: @respond.Item1</p>
+									<p>Answer: @respond.Item3</p>
+								</div>
+								i++;
+							}
+						}
+						else
+						{
+							<div class="col-md-12 card p-2">
+								<br />
+								<p class="text-align content-center text-danger text-center">
+									You don't give any answer yet! Please Provide an answer that you want.
+								</p>
+							</div>
+						}
+
+					}
+				</div>
+			</div>
 		</div>
 	</div>
 

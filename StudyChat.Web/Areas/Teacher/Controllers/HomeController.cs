@@ -4,6 +4,7 @@ using StudyChat.Services.Interface;
 using StudyChat.Services;
 using StudyChat.Core.Entities;
 using StudyChat.DataAccess.Repository;
+using StudyChat.Web.Areas.Teacher.Models;
 
 namespace StudyChat.Web.Areas.Teacher.Controllers
 {
@@ -13,11 +14,13 @@ namespace StudyChat.Web.Areas.Teacher.Controllers
 	{
 		private readonly IQuestionService _questionService;
 		private readonly IUserService _userService;
+		private readonly IAnswerService _answerService;
 
-		public HomeController(IQuestionService questionService, IUserService userService)
+		public HomeController(IQuestionService questionService, IUserService userService, IAnswerService answerService)
 		{
 			_questionService = questionService;
 			_userService = userService;
+			_answerService = answerService;
 		}
 
 		public async Task<ViewResult> Index()
@@ -36,9 +39,11 @@ namespace StudyChat.Web.Areas.Teacher.Controllers
 			return View();
 		}
 
-		public IActionResult Respond()
+		public async Task<ViewResult> Respond()
 		{
-			return View();
+			var respondedQAs = await _userService.GetRespondedQA(_userService.GetUserId);
+			Console.WriteLine(respondedQAs);
+			return View(respondedQAs);
 		}
 
 		public async Task<IActionResult> QuestionAnswer(int id)
@@ -48,23 +53,45 @@ namespace StudyChat.Web.Areas.Teacher.Controllers
 			{
 				if (id == 0)
 				{
-					return RedirectToAction("Setting", "Home", new { area = "Teacher" });
+					return RedirectToAction("index", "Home", new { area = "Teacher" });
 				}
 				else
 				{
 					question = await _questionService.GetQuestionById(id);
 					if (question == null)
 					{
+						TempData["ErrorMessage"] = "Something went wrong";
 						return NotFound();
 					}
+					question.UserId = _userService.GetUserName(question.UserId);
 				}
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine(e);
 				throw;
 			}
 			return View(question);
+		}
+
+		[HttpPost]
+		public IActionResult QuestionAnswer(int questionId, string content)
+		{
+			if (ModelState.IsValid)
+			{
+				Answer answer = new()
+				{
+					Content = content,
+					QuestionId = questionId,
+					UserId = _userService.GetUserId,
+				};
+
+				_answerService.CreateAnswer(answer);
+				TempData["Message"] = "Answer Submitted Successfully";
+
+				return RedirectToAction("Respond", "Home", new { area = "Teacher" });
+			}
+			TempData["ErrorMessage"] = "Something went wrong";
+			return View();
 		}
 
 
